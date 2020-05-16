@@ -7,9 +7,9 @@ pwm.start(8.3)
 time.sleep(1)
 i = 0
 for i in range(10):
-    pwm.ChangeDutyCycle(9.7)
+    pwm.ChangeDutyCycle(9.8) #opening of the servo
     time.sleep(1)
-    pwm.ChangeDutyCycle(6.0)
+    pwm.ChangeDutyCycle(6.0) #closing of the servo
     time.sleep(1)
 pwm.stop()
 GPIO.cleanup()

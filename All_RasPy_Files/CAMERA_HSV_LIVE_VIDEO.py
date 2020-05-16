@@ -22,6 +22,7 @@ class CameraInst():
                 self.ret, self.frame = self.cap.read()
                 # Image manipulations come here...
                 self.gray = cv2.cvtColor(self.frame, cv2.COLOR_BGR2HSV)
+                self.gray = cv2.flip(self.gray,0) 
                 cv2.imshow('frame',self.gray)
 
         def saveVideo(self):

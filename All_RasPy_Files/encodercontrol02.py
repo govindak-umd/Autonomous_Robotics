@@ -31,10 +31,13 @@ val = 14
 pwm.start(val)
 time.sleep(0.1)
 
+
+list_of_gpio = []
 for i in range(0,100000):
     print("counter = ",counter,"GPIO state : ",gpio.input(12))
-    
+    list_of_gpio.append(gpio.input(12))
     if int (gpio.input(12)) != int(button):
+    
         button = int(gpio.input(12))
         counter += 1
     if counter >= 20:
@@ -42,4 +45,8 @@ for i in range(0,100000):
          gameover()
          print("THANKS")
          break
-        
+file = open('gpio_values_02.txt','w')
+for i in list_of_gpio:
+    file.write(str(i))
+    file.write('\n')
+file.close()

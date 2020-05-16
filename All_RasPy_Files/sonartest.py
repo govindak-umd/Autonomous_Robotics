@@ -39,42 +39,45 @@ def distance():
     distance = pulse_duration*17150
     distance = round(distance,2)
     all_distance.append(distance)
-    time.sleep(1)
+    #time.sleep(1)
     gpio.cleanup()
     #cleanup gpio pins and 
     return(distance)
-all_distance=[]
-for i in range(10):
-    print("distance: ",distance(),"cm")
-    all_distance.append(distance())
-    time.sleep(0.1)
-    
-print('all distances are : ',all_distance)
- 
-sum=0.00
-for i in range(len(all_distance)):
-    sum = sum+all_distance[i]
-mean_value = float(sum/10)
-print('The mean distance is : ',mean_value)
-
-# Read the image
-img = cv2.imread('sonartestimage.jpg')
-# initialize counter
-print(img.shape)
-
 while True:
-    # Display the image
-#    cv2.imshow('a',img)
-    # wait for keypress
-    k = cv2.waitKey(0)
-    # specify the font and draw the key using puttext
-    font = cv2.FONT_HERSHEY_SIMPLEX
-    cv2.putText(img,'mean :'+str(mean_value),(100,100), font,1,(255,255,255),1,cv2.LINE_AA)
-    cv2.imshow('a',img)
-    plt.savefig('sonar_submission.png')
-    if k == ord('q'):
-        break
-cv2.destroyAllWindows()
+    dist = distance()
+    print("dist=",dist)
+# all_distance=[]
+# for i in range(10):
+#     print("distance: ",distance(),"cm")
+#     all_distance.append(distance())
+#     time.sleep(0.1)
+#     
+# print('all distances are : ',all_distance)
+#  
+# sum=0.00
+# for i in range(len(all_distance)):
+#     sum = sum+all_distance[i]
+# mean_value = float(sum/10)
+# print('The mean distance is : ',mean_value)
+# 
+# # Read the image
+# img = cv2.imread('sonartestimage.jpg')
+# # initialize counter
+# print(img.shape)
+# 
+# while True:
+#     # Display the image
+# #    cv2.imshow('a',img)
+#     # wait for keypress
+#     k = cv2.waitKey(0)
+#     # specify the font and draw the key using puttext
+#     font = cv2.FONT_HERSHEY_SIMPLEX
+#     cv2.putText(img,'mean :'+str(mean_value),(100,100), font,1,(255,255,255),1,cv2.LINE_AA)
+#     cv2.imshow('a',img)
+#     plt.savefig('sonar_submission.png')
+#     if k == ord('q'):
+#         break
+# cv2.destroyAllWindows()
 
 
 
