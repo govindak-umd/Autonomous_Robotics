@@ -1,7 +1,8 @@
-Here are some of the photos of the Robot we made:
+# Autonomous Robot
 
+This repository records the code developed in Python on Raspberry Pi4.
 
-Find full build and more information on :  <https://govindajithkumar.com>
+- Find full build and further information [here](https://govindajithkumar.com/autonomous-ground-robot-build-progress/).
 
 
 ![](Images/IMG_1938.JPEG)<br/>
